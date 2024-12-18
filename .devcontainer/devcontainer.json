@@ -1,0 +1,21 @@
+{
+    "name": "express-template",
+    "dockerComposeFile": "compose.yml",
+    "service": "express-template",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+          "esbenp.prettier-vscode",
+          "dbaeumer.vscode-eslint",
+          "Gruntfuggly.todo-tree",
+          "GitHub.vscode-pull-request-github",
+          "humao.rest-client"
+        ]
+      }
+    },
+    "postCreateCommand": "npm i"
+  }
+  
+  
+  

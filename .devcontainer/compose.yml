@@ -1,0 +1,7 @@
+services:
+  express-template:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace:cached
