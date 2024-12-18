@@ -1,6 +1,19 @@
 
 
+# Express - Sample
 
+## 📖 Sobre o Projeto
+Este projeto é um repositório base para criação de api usando node-express, utilizando Docker para facilitar a hospedagem e isolamento do ambiente.
+
+## 🚀 Tecnologias e Ferramentas
+#### Bibliotecas e Tecnologias Utilizadas:
+| Tecnologia           | Versão    |
+|----------------------|-----------|
+| **Runtime**           |           |
+| Node                  | v23.x     |
+| **Desenvolvimento**   |           |
+| Docker Engine         | vXX.X.X   |
+| Bundler               | v2.6.0    |
 
 
 ### Organização do projeto
@@ -9,17 +22,27 @@
 ├─📁 .devcontainer          ->  Configurações do devcontainer
 ├─📁 .vscode                ->  Definições de ambiente para o VSCode
 ├─📁 docs                   ->  Artefatos para documentação do repo
-├─📁 Api                    ->  Entrypoint da aplicação
+├─📁 src                    ->  Entrypoint da aplicação
 │ │ ├─ 📁 config            ->  configurações usadas na api
-│ │    ├─ 🇹 prisma.ts         ->  conexão com o prisma ORM
-│ │    ├─ 🇹 serverconfig.ts   ->  configurações padrão para o servidor
+│ │ │  ├─ 🇹 prisma.ts         ->  conexão com o prisma ORM
+│ │ │  ├─ 🇹 serverconfig.ts   ->  configurações padrão para o servidor(logs)
+│ │ │       ...
+│ │ ├─📁 Api                    ->  Entrypoint da aplicação
+│ │ │ │ ├─ 📁 exemple           ->  configurações usadas na api
+│ │ │ │ │  ├─ 🇹 controller.ts  ->  responsáveis por lidar com as requisições e respostas HTTP
+│ │ │ │ │  ├─ 🇹 index.ts       ->  responsavel por implementar a interface da Api
+│ │ │ │ │  ├─ 🇹 middleware.ts  ->  função que está entre um pedido HTTP e a resposta final que o servidor envia de volta para o cliente.
+│ │ │ │ │       ...
+│ │        ├─ 🇹 index.ts       ->  interface
+│ │            ...
+│ ├─ 📁 lifecycle-manager      ->  Modulo de controle de estado de execução
+│ │    ├─ 🇹 index.ts                    ->  gerenciador de ciclo de vida
 │ │         ...
-│ │
-│ │ ├─ 📁 Utils                            ->  Modulo de codigos utils para toda a aplicação
+│ ├─ 📁 Utils                            ->  Modulo de codigos utils para toda a aplicação
 │ │    ├─ 🇹 exemple.ts                    ->  exemple
 │ │         ...
 │ │
-│ ├─ 🇹 server.ts            ->  Entrypoint server
+│ ├─ 🇹 index.ts            ->  Entrypoint server
 │   ...
 ├─📁 tests                   ->  Testes da aplicação
 │   ├─ 🇹 ....ts             -> test1
@@ -60,12 +83,6 @@ E para instacia-lo no VSCODE é recomendado as seguintes configurações:
 Depois da compilação do container o VSCode abrirá o repositório em um ambiente encapsulado e executando diretamente de dentro do container como configurado nas definições do **/.devconainer**.
 
 #### Procedimento para iniciar
-
-# Aplique as migrações disponiveis:
-
-```
-$> npx prisma migrate dev
-```
 
 # Inicie o servidor 
 
