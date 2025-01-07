@@ -2,12 +2,14 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import { setupApis } from './api';
 import { lifecycle } from './lifecycle-manager';
+const morgan = require('morgan');
 
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('dev'));
 
 setupApis(app);
 
