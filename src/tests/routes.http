@@ -1,0 +1,5 @@
+### Teste GET home
+GET http://localhost:3000/api/
+
+### Teste GET example
+GET http://localhost:3000/api/example
